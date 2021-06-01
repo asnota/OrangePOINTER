@@ -5,9 +5,9 @@ The repository contains the scripts for the model, described in a paper submitte
 The goal of this approach is a text generation under specific constrains (keywords) in a progressive, non-autoregressive manner.
 
 ## Project predecessor relation
-The current project is an adaptation to a French language context of the <a href="https://github.com/dreasysnail/POINTER">initial code repository</a>. 
+The current project is an adaptation to a French language context of the <a href="https://github.com/dreasysnail/POINTER">initial code repository</a>, distributed under the MIT license. 
 The main changes are (but to limited to):
-1. Making code executable as Juputer notebooks on cloud platforms (Google Cloud Platform, Colab, Kaggle)   
+1. Making code executable as Jupiter notebooks on cloud platforms (Google Cloud Platform, Colab, Kaggle)   
 2. Transitionning the training script from GPU to TPU.
 3. Rewriting of the keywords extraction script, since the YAKE extractor didn't result in acceptable output for French language.
 4. Addition of the CodeCarbon tracking, reported to the Comet ML platform for the scripts requiring considerable energy consumption.
