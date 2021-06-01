@@ -12,7 +12,7 @@ The main changes are (but to limited to):
 3. Rewriting of the keywords extraction script, since the YAKE extractor didn't result in acceptable output for French language.
 4. Addition of the CodeCarbon tracking, reported to the Comet ML platform for the scripts requiring considerable energy consumption.
 5. Amerioration of the cleansing procedure in ```generate_training_data.ipynb``` script, based on empirical observations of the output.
-6. Addition of the ```join_train_data.ipynb``` script: since 100Mo of the raw French text takes about 3 hours to output the data consumable by the model, therefore we made turning everal GCP instances at the same time to speed up the generation of the pretraining data and join them into one big file in the end.
+6. Addition of the ```join_train_data.ipynb``` script: since 100Mo of the raw French text takes about 3 hours to output the data consumable by the model, therefore we made turning several GCP instances at the same time to speed up the generation of the pretraining data and join them into one big file in the end.
 7. Addition of the ```postprocessing.ipynb``` script, sinc the result of the inference contained undesired tags.
 8. Numerous comments and structurization of the code blocks.
 
@@ -25,7 +25,7 @@ The order of the scripts execution might be described in the following scenarios
 3 files of metrics and 3 files for the text data itself. The number "3" corresponds to the number of data epochs.
 You must put your key and name in the code from <a href="https://www.comet.ml/site/">Comet ML</a> in order to make work the CodeCarbon reporting. If you don't have CometML account or you don't want to create one, do not execute CometML-related cells to avoid login errors.
 
-2) join_train_data might be applied if the script was running on different VM instances or sevela times on the same VM, to consolidate the pretraining data.
+2) ```join_train_data.ipynb``` might be applied if the script was running on different VM instances or sevela times on the same VM, to consolidate the pretraining data.
 It takes zip folders coming from ```generate_training_data.ipynb```. You must manually rename zip folders by adding _[number], starting from 0, for example:
 ```
 metrics_data_0.zip
