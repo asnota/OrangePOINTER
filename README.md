@@ -25,16 +25,16 @@ The order of the scripts execution might be described in the following scenarios
 3 files of metrics and 3 files for the text data itself. The number "3" corresponds to the number of data epochs.
 You must put your key and name in the code from <a href="https://www.comet.ml/site/">Comet ML</a> in order to make work the CodeCarbon reporting. If you don't have CometML account or you don't want to create one, do not execute CometML-related cells to avoid login errors.
 
-2) ```join_train_data.ipynb``` might be applied if the script was running on different VM instances or sevela times on the same VM, to consolidate the pretraining data.
+2) ```join_train_data.ipynb``` might be applied if the script was running on different VM instances or several times on the same VM, to consolidate the pretraining data.
 It takes zip folders coming from ```generate_training_data.ipynb```. You must manually rename zip folders by adding _[number], starting from 0, for example:
 ```
 metrics_data_0.zip
 training_data_0.zip
 ```
-the script generates two zip folders, similar to the those you might have received directly from `generate_training_data` script.
+the script generates two zip folders, similar to the ones you might have received directly from `generate_training_data.ipynb` script.
 
 ### Pre-training
-```pretraining_on_TPU.ipynb``` must be executed on TPU enabled device. It takes zip folders from training data generation step and outputs a pytorch_model.bin file. 
+```pretraining_on_TPU.ipynb``` must be executed on TPU enabled device. It takes zip folders from training data generation step and outputs a ```pytorch_model.bin``` file. 
 Put the file inside a folder titled ```model``` containing configuration files - you may download it from this repository, and zip it.
  
 ### Finetunning
@@ -76,7 +76,7 @@ The pregenerated data used during the finetunning is available for downloading:
 | Model            | Link to download    |
 | ---              | ---                 |
 | pretrained model | <a href="https://orangepointer.blob.core.windows.net/files/pretrained_model.zip">link</a> |
-| finetunned model | <a href="">link</a> |
+| finetunned model | <a href="https://orangepointer.blob.core.windows.net/files/finetunned_model.zip">link</a> |
 
 ## Examples of generation
 
@@ -99,4 +99,4 @@ The pregenerated data used during the finetunning is available for downloading:
 ## Demo
 If you wish to run a demo of the inference using a finetunned model, you may do so in <a href="https://colab.research.google.com/">Colab</a> or <a href="https://www.kaggle.com/">Kaggle</a> (for free). 
 In either of platforms you need import the ```finetunning_on_TPU.ipynb```, downloaded from a current repository.
-Once done, execute all the cells - the script aready contains wget commands downloading the latest version of <a href="">OrangePOINTER finetunned model</a> and the <a href="https://orangepointer.blob.core.windows.net/files/keywords.txt">keywords</a> for the text generation, which were extracted from the summaries of OrangeSUM dataset, contained in a test split (1500 entries). 
+Once done, execute all the cells - the script aready contains wget commands downloading the latest version of <a href="https://orangepointer.blob.core.windows.net/files/finetunned_model.zip">OrangePOINTER finetunned model</a> and the <a href="https://orangepointer.blob.core.windows.net/files/keywords.txt">keywords</a> for the text generation, which were extracted from the summaries of OrangeSUM dataset, contained in a test split (1500 entries). 
