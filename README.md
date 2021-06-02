@@ -11,8 +11,8 @@ The main changes are (but to limited to):
 2. Transitionning the training script from GPU to TPU.
 3. Rewriting of the keywords extraction script, since the YAKE extractor didn't result in acceptable output for French language.
 4. Addition of the CodeCarbon tracking, reported to the Comet ML platform for the scripts requiring considerable energy consumption.
-5. Amerioration of the cleansing procedure in ```generate_training_data.ipynb``` script, based on empirical observations of the output.
-6. Addition of the ```join_train_data.ipynb``` script: since 100Mo of the raw French text takes about 3 hours to output the data consumable by the model, therefore we made turning several GCP instances at the same time to speed up the generation of the pretraining data and join them into one big file in the end.
+5. Amelioration of the cleansing procedure in ```generate_training_data.ipynb``` script, based on empirical observations of the output.
+6. Addition of the ```join_train_data.ipynb``` script. The necessity of this script was dictated by the fact that 100Mo of the raw French text takes about 3 hours to output the data consumable by the model, therefore we made turning several GCP instances at the same time to speed up the generation of the pretraining data and join them into one big file in the end.
 7. Addition of the ```postprocessing.ipynb``` script, since the result of the inference contained undesired tags.
 8. Numerous comments and structurization of the code blocks.
 
@@ -31,14 +31,15 @@ It takes zip folders coming from ```generate_training_data.ipynb```. You must ma
 metrics_data_0.zip
 training_data_0.zip
 ```
-the script generates two zip folders, similar to the those you might have received directly from ```generate_training_data``` script.
+the script generates two zip folders, similar to the those you might have received directly from `generate_training_data` script.
 
 ### Pre-training
-```pretraining_on_TPU.ipynb``` must be executed on TPU enabled device. It takes zip folders from training data generation step and outputs a pytorch_model.bin file. Put the file inside a folder containing configuration files, you can download from this repository, and zip it.
+```pretraining_on_TPU.ipynb``` must be executed on TPU enabled device. It takes zip folders from training data generation step and outputs a pytorch_model.bin file. 
+Put the file inside a folder titled ```model``` containing configuration files - you may download it from this repository, and zip it.
  
 ### Finetunning
 Similar to the pretraining, but uses different set of parameters (learning rate, number of epochs) and, most importantly, it takes a pretrained model as an input. 
-For the sake of clarity we have devided a finetunning script to a separate file, containing all configuration needed: ```finetunning_on_TPU```
+For the sake of clarity we have devided a finetunning script to a separate file, containing all configuration needed: ```finetunning_on_TPU.ipynb```
 The example of a pretrained model might be found in a current repository.
  
 ### Keywords extraction
@@ -66,7 +67,7 @@ Vocab sizes are given in thousands of tokens.
 | ---     | ---                  | ---                          | ---                               | ---                          | ---                              | ---                       | ---                      |
 | OrangeSUM | 21.4/1.5/1.5       | 350                          | 12.06 							   | 32.12						  | 1.43							 | 420						 | 71                       |
 
-The pregenerated data used for finetunning are available for <a href="">downloading</a>.
+The pregenerated data used during the finetunning is available for <a href="">downloading</a>.
 
 ## Models
 
@@ -79,7 +80,7 @@ The pregenerated data used for finetunning are available for <a href="">download
 
 1. Sampling decoding strategy:
 
-| Keys           | Generated sentences    |
+| Keys             | Generated sentences |
 | ---              | ---                 |
 | keys | sentences |
 | keys | sentences |
@@ -87,8 +88,13 @@ The pregenerated data used for finetunning are available for <a href="">download
 
 2. Greedy decoding strategy:
 
-| Keys           | Generated sentences    |
+| Keys             | Generated sentences |
 | ---              | ---                 |
 | keys | sentences |
 | keys | sentences |
 | keys | sentences |
+
+## Demo
+If you wish to run a demo of the inference using a finetunned model, you may do so for free in <a href="https://colab.research.google.com/">Colab</a> or <a href="https://www.kaggle.com/">Kaggle</a>. 
+In either of platforms you need import the ```finetunning_on_TPU.ipynb```, downloaded from a current repository.
+Once done, execute all the cells - the script aready contains wget commands downloading the latest version of OrangePOINTER finetunned model and the <a href="https://orangepointer.blob.core.windows.net/files/keywords.txt">keywords</a> for the text generation, which were extracted from the summaries of OrangeSUM dataset, contained in a test split (1500 entries). 
