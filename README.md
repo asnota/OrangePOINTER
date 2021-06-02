@@ -13,7 +13,7 @@ The main changes are (but to limited to):
 4. Addition of the CodeCarbon tracking, reported to the Comet ML platform for the scripts requiring considerable energy consumption.
 5. Amerioration of the cleansing procedure in ```generate_training_data.ipynb``` script, based on empirical observations of the output.
 6. Addition of the ```join_train_data.ipynb``` script: since 100Mo of the raw French text takes about 3 hours to output the data consumable by the model, therefore we made turning several GCP instances at the same time to speed up the generation of the pretraining data and join them into one big file in the end.
-7. Addition of the ```postprocessing.ipynb``` script, sinc the result of the inference contained undesired tags.
+7. Addition of the ```postprocessing.ipynb``` script, since the result of the inference contained undesired tags.
 8. Numerous comments and structurization of the code blocks.
 
 ## Project description
@@ -47,4 +47,48 @@ The example of a pretrained model might be found in a current repository.
 ### Inference
 ```inference.ipynb``` takes the finetunned model along with configuration files and a keywords.txt file. 
 The decoding strategy might be switched between 'greedy' and 'sampling'. 
-Such parameters as the top-k, top-p and temperature for the 'sampling' decoding strategy, might be modulated as well. 
+Such parameters as the top-k, top-p and temperature for the 'sampling' decoding strategy, might be modulated as well.
+
+## Data sources description
+
+### Pretraining dataset: CC-100
+
+| Dataset | Size |
+| ---     | ---  |
+| CC-100  | 54Go |
+
+### Finetunning dataset
+
+Split sizes are given in thousands of documents.
+Vocab sizes are given in thousands of tokens.
+
+| Dataset | train/val/test sizes |avg. document length in words | avg. document length in sentences | avg. summary length in words | avg. summary length in sentences | vocabulary size: document | vocabulary size: summary |
+| ---     | ---                  | ---                          | ---                               | ---                          | ---                              | ---                       | ---                      |
+| OrangeSUM | 21.4/1.5/1.5       | 350                          | 12.06 							   | 32.12						  | 1.43							 | 420						 | 71                       |
+
+The pregenerated data used for finetunning are available for <a href="">downloading</a>.
+
+## Models
+
+| Model            | Link to download    |
+| ---              | ---                 |
+| pretrained model | <a href="">link</a> |
+| finetunned model | <a href="">link</a> |
+
+## Examples of generation
+
+1. Sampling decoding strategy:
+
+| Keys           | Generated sentences    |
+| ---              | ---                 |
+| keys | sentences |
+| keys | sentences |
+| keys | sentences |
+
+2. Greedy decoding strategy:
+
+| Keys           | Generated sentences    |
+| ---              | ---                 |
+| keys | sentences |
+| keys | sentences |
+| keys | sentences |
