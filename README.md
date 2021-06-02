@@ -54,9 +54,9 @@ Such parameters as the top-k, top-p and temperature for the 'sampling' decoding 
 
 ### Pretraining dataset: CC-100
 
-| Dataset | Size |
-| ---     | ---  |
-| CC-100  | 54Go |
+| Dataset               | Size |
+| ---                   | ---  |
+| CC-100 (French part)  | 54Go |
 
 ### Finetunning dataset
 
@@ -67,13 +67,15 @@ Vocab sizes are given in thousands of tokens.
 | ---     | ---                  | ---                          | ---                               | ---                          | ---                              | ---                       | ---                      |
 | OrangeSUM | 21.4/1.5/1.5       | 350                          | 12.06 							   | 32.12						  | 1.43							 | 420						 | 71                       |
 
-The pregenerated data used during the finetunning is available for <a href="">downloading</a>.
+The pregenerated data used during the finetunning is available for downloading: 
+<a href="https://orangepointer.blob.core.windows.net/files/metrics_data.zip">metrics folder</a> and 
+<a href="https://orangepointer.blob.core.windows.net/files/training_data.zip">training text data folder</a>.
 
 ## Models
 
 | Model            | Link to download    |
 | ---              | ---                 |
-| pretrained model | <a href="">link</a> |
+| pretrained model | <a href="https://orangepointer.blob.core.windows.net/files/pretrained_model.zip">link</a> |
 | finetunned model | <a href="">link</a> |
 
 ## Examples of generation
@@ -95,6 +97,6 @@ The pregenerated data used during the finetunning is available for <a href="">do
 | keys | sentences |
 
 ## Demo
-If you wish to run a demo of the inference using a finetunned model, you may do so for free in <a href="https://colab.research.google.com/">Colab</a> or <a href="https://www.kaggle.com/">Kaggle</a>. 
+If you wish to run a demo of the inference using a finetunned model, you may do so in <a href="https://colab.research.google.com/">Colab</a> or <a href="https://www.kaggle.com/">Kaggle</a> (for free). 
 In either of platforms you need import the ```finetunning_on_TPU.ipynb```, downloaded from a current repository.
-Once done, execute all the cells - the script aready contains wget commands downloading the latest version of OrangePOINTER finetunned model and the <a href="https://orangepointer.blob.core.windows.net/files/keywords.txt">keywords</a> for the text generation, which were extracted from the summaries of OrangeSUM dataset, contained in a test split (1500 entries). 
+Once done, execute all the cells - the script aready contains wget commands downloading the latest version of <a href="">OrangePOINTER finetunned model</a> and the <a href="https://orangepointer.blob.core.windows.net/files/keywords.txt">keywords</a> for the text generation, which were extracted from the summaries of OrangeSUM dataset, contained in a test split (1500 entries). 
