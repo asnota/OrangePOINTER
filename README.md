@@ -76,7 +76,7 @@ The pregenerated data used during the finetunning is available for downloading:
 | Model            | Link to download    |
 | ---              | ---                 |
 | pretrained model | <a href="https://orangepointer.blob.core.windows.net/files/pretrained_model.zip">link</a> |
-| finetunned model | <a href="https://orangepointer.blob.core.windows.net/files/finetunned_model.zip">link</a> |
+| finetuned model | <a href="https://orangepointer.blob.core.windows.net/files/finetunned_model.zip">link</a> |
 
 ## Examples of generation
 
@@ -99,4 +99,5 @@ The pregenerated data used during the finetunning is available for downloading:
 ## Demo
 If you wish to run a demo of the inference using a finetuned model, you may do so in <a href="https://colab.research.google.com/">Colab</a> or <a href="https://www.kaggle.com/">Kaggle</a> (for free). 
 In either of platforms you need import the ```finetunning_on_TPU.ipynb```, downloaded from a current repository.
-Once done, execute all the cells - the script aready contains wget commands downloading the latest version of <a href="https://orangepointer.blob.core.windows.net/files/finetunned_model.zip">OrangePOINTER finetuned model</a> and the <a href="https://orangepointer.blob.core.windows.net/files/keywords.txt">keywords</a> for the text generation, which were extracted from the summaries of OrangeSUM dataset, contained in a test split (1500 entries). 
+Once done, execute all the cells - the script aready contains wget commands downloading the latest version of <a href="https://orangepointer.blob.core.windows.net/files/finetunned_model.zip">OrangePOINTER finetuned model</a> and the <a href="https://orangepointer.blob.core.windows.net/files/keywords.txt">keywords</a> for the text generation, which were extracted from the summaries of OrangeSUM dataset, contained in a test split (1500 entries).
+The generated txt file will be saved to the same folder, where the model was unpacked (./model).

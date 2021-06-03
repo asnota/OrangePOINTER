@@ -26,5 +26,5 @@
   "pooler_type": "first_token_transform",
   "torchscript": false,
   "type_vocab_size": 2,
-  "vocab_size": 119547
+  "vocab_size": 105879
 }
