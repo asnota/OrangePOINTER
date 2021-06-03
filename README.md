@@ -46,7 +46,7 @@ The example of a pretrained model might be found in a current repository.
 ```spacy_keywords_extraction.ipynb``` takes a raw text file and returns a text file of extracted keywords. The amont of generated keywords may be modulated.
 
 ### Inference
-```inference.ipynb``` takes the finetunned model along with configuration files and a keywords.txt file. 
+```inference.ipynb``` takes the finetuned model along with configuration files and a keywords.txt file. 
 The decoding strategy might be switched between 'greedy' and 'sampling'. 
 Such parameters as the top-k, top-p and temperature for the 'sampling' decoding strategy, might be modulated as well.
 
@@ -97,6 +97,6 @@ The pregenerated data used during the finetunning is available for downloading:
 | keys | sentences |
 
 ## Demo
-If you wish to run a demo of the inference using a finetunned model, you may do so in <a href="https://colab.research.google.com/">Colab</a> or <a href="https://www.kaggle.com/">Kaggle</a> (for free). 
+If you wish to run a demo of the inference using a finetuned model, you may do so in <a href="https://colab.research.google.com/">Colab</a> or <a href="https://www.kaggle.com/">Kaggle</a> (for free). 
 In either of platforms you need import the ```finetunning_on_TPU.ipynb```, downloaded from a current repository.
-Once done, execute all the cells - the script aready contains wget commands downloading the latest version of <a href="https://orangepointer.blob.core.windows.net/files/finetunned_model.zip">OrangePOINTER finetunned model</a> and the <a href="https://orangepointer.blob.core.windows.net/files/keywords.txt">keywords</a> for the text generation, which were extracted from the summaries of OrangeSUM dataset, contained in a test split (1500 entries). 
+Once done, execute all the cells - the script aready contains wget commands downloading the latest version of <a href="https://orangepointer.blob.core.windows.net/files/finetunned_model.zip">OrangePOINTER finetuned model</a> and the <a href="https://orangepointer.blob.core.windows.net/files/keywords.txt">keywords</a> for the text generation, which were extracted from the summaries of OrangeSUM dataset, contained in a test split (1500 entries). 
