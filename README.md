@@ -78,23 +78,9 @@ The pregenerated data used during the finetunning is available for downloading:
 | pretrained model | <a href="https://orangepointer.blob.core.windows.net/files/pretrained_model.zip">link</a> |
 | finetuned model | <a href="https://orangepointer.blob.core.windows.net/files/finetunned_model.zip">link</a> |
 
-## Examples of generation
+## Example of text generation
 
-1. Sampling decoding strategy:
-
-| Keys             | Generated sentences |
-| ---              | ---                 |
-| keys | sentences |
-| keys | sentences |
-| keys | sentences |
-
-2. Greedy decoding strategy:
-
-| Keys             | Generated sentences |
-| ---              | ---                 |
-| keys | sentences |
-| keys | sentences |
-| keys | sentences |
+![Capture](https://github.com/asnota/OrangePOINTER/blob/main/static/Capture.PNG)
 
 ## Demo
 If you wish to run a demo of the inference using a finetuned model, you may do so in <a href="https://colab.research.google.com/">Colab</a> or <a href="https://www.kaggle.com/">Kaggle</a> (for free). 
